@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore the extensive portfolio of Greenstone Property Development Ltd. View our flagship estates, shopping malls, commercial complexes, and residential properties across Nigeria.">
+  <title>Our Projects | Greenstone Property Development Ltd</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --primary-green: #2d5a3d;
+      --dark-green: #1e3d29;
+      --light-green: #4a7c59;
+      --accent-gold: #c9a961;
+      --dark: #1a1a1a;
+      --gray: #666;
+      --light-gray: #f5f5f5;
+      --white: #ffffff;
+      --transition: all 0.3s ease;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Open Sans', sans-serif; color: var(--dark); line-height: 1.6; overflow-x: hidden; }
+    h1, h2, h3, h4, h5, h6 { font-family: 'Montserrat', sans-serif; font-weight: 700; }
+    a { text-decoration: none; color: inherit; transition: var(--transition); }
+    img { max-width: 100%; height: auto; }
+    .container { width: 90%; max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+
+    .btn {
+      display: inline-block; padding: 14px 35px; border-radius: 4px; font-weight: 600;
+      font-family: 'Montserrat', sans-serif; cursor: pointer; transition: var(--transition);
+      border: 2px solid transparent; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 0.5px;
+    }
+    .btn-primary { background-color: var(--primary-green); color: var(--white); border-color: var(--primary-green); }
+    .btn-primary:hover { background-color: var(--dark-green); border-color: var(--dark-green); transform: translateY(-2px); }
+    .btn-gold { background-color: var(--accent-gold); color: var(--white); border-color: var(--accent-gold); }
+    .btn-gold:hover { background-color: #b8984d; border-color: #b8984d; transform: translateY(-2px); }
+
+    /* Header & Navigation */
+    header { background-color: var(--white); position: fixed; top: 0; width: 100%; z-index: 1000; box-shadow: 0 2px 15px rgba(0,0,0,0.1); }
+    .top-bar { background-color: var(--dark-green); color: var(--white); padding: 10px 0; font-size: 0.9rem; }
+    .top-bar .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
+    .top-bar-left { display: flex; gap: 25px; align-items: center; }
+    .top-bar-left a { display: flex; align-items: center; gap: 8px; }
+    .top-bar-left a:hover { color: var(--accent-gold); }
+    .top-bar-right { display: flex; gap: 15px; }
+    .top-bar-right a { width: 35px; height: 35px; background-color: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: var(--transition); }
+    .top-bar-right a:hover { background-color: var(--accent-gold); transform: translateY(-2px); }
+    .navbar { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; }
+    .logo { display: flex; align-items: center; gap: 12px; }
+    .logo img { width: 60px; height: 60px; object-fit: contain; }
+    .logo-text h1 { font-size: 1.5rem; color: var(--primary-green); font-weight: 800; line-height: 1.2; }
+    .logo-text span { font-size: 0.75rem; color: var(--gray); font-weight: 500; display: block; letter-spacing: 1px; }
+    .nav-links { display: flex; gap: 35px; align-items: center; }
+    .nav-links a { font-weight: 600; font-size: 0.95rem; color: var(--dark); position: relative; padding: 5px 0; }
+    .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background-color: var(--primary-green); transition: var(--transition); }
+    .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+    .nav-links a.active { color: var(--primary-green); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { width: 25px; height: 3px; background-color: var(--primary-green); transition: var(--transition); }
+
+    /* Page Hero */
+    .page-hero {
+      margin-top: 120px; position: relative; height: 50vh; min-height: 400px;
+      background: linear-gradient(rgba(30, 61, 41, 0.85), rgba(30, 61, 41, 0.85)),
+      url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1920&auto=format&fit=crop') center/cover;
+      display: flex; align-items: center; justify-content: center; text-align: center; color: var(--white);
+    }
+    .page-hero h1 { font-size: 3rem; margin-bottom: 15px; }
+    .page-hero p { font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
+    .breadcrumb { margin-top: 20px; font-size: 0.95rem; }
+    .breadcrumb a { color: var(--accent-gold); }
+    .breadcrumb span { margin: 0 10px; opacity: 0.7; }
+
+    /* Sections General */
+    .section-padding { padding: 100px 0; }
+    .section-header { text-align: center; margin-bottom: 60px; }
+    .section-subtitle { color: var(--primary-green); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; margin-bottom: 10px; display: block; }
+    .section-title { font-size: 2.5rem; color: var(--dark); margin-bottom: 20px; line-height: 1.3; }
+    .section-title span { color: var(--primary-green); }
+    .section-divider { width: 80px; height: 4px; background-color: var(--accent-gold); margin: 0 auto 20px; }
+
+    /* Project Cards Base */
+    .project-card {
+      position: relative; border-radius: 8px; overflow: hidden; cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: var(--transition);
+    }
+    .project-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.2); }
+    .project-card img { width: 100%; height: 100%; object-fit: cover; transition: var(--transition); }
+    .project-card:hover img { transform: scale(1.1); }
+    .project-overlay {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: linear-gradient(to top, rgba(30, 61, 41, 0.95), transparent);
+      padding: 25px; color: var(--white); transform: translateY(20px); opacity: 0; transition: var(--transition);
+    }
+    .project-card:hover .project-overlay { transform: translateY(0); opacity: 1; }
+    .project-overlay h3 { font-size: 1.3rem; margin-bottom: 8px; color: var(--white); }
+    .project-overlay p { font-size: 0.9rem; opacity: 0.9; line-height: 1.5; }
+    .project-tag {
+      position: absolute; top: 15px; left: 15px; background-color: var(--accent-gold);
+      color: var(--white); padding: 5px 12px; border-radius: 4px; font-size: 0.75rem;
+      font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+    }
+
+    /* Big Projects Grid */
+    .big-projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
+    .big-project-card { height: 400px; }
+
+    /* Medium Projects Grid */
+    .medium-projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
+    .medium-project-card { height: 320px; }
+
+    /* Small Projects Grid */
+    .small-projects-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .small-project-card { height: 250px; }
+    .small-project-card .project-overlay { padding: 15px; }
+    .small-project-card .project-overlay h3 { font-size: 1.1rem; }
+    .small-project-card .project-overlay p { font-size: 0.8rem; }
+
+    /* CTA Section */
+    .cta { padding: 80px 0; background-color: var(--primary-green); text-align: center; }
+    .cta h2 { font-size: 2.5rem; color: var(--white); margin-bottom: 20px; }
+    .cta p { font-size: 1.2rem; color: rgba(255,255,255,0.9); margin-bottom: 35px; max-width: 700px; margin-left: auto; margin-right: auto; }
+
+    /* Footer */
+    footer { background-color: var(--dark); color: var(--white); padding: 80px 0 30px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 50px; margin-bottom: 50px; }
+    .footer-col h3 { font-size: 1.3rem; margin-bottom: 25px; color: var(--white); position: relative; padding-bottom: 12px; }
+    .footer-col h3::after { content: ''; position: absolute; bottom: 0; left: 0; width: 50px; height: 3px; background-color: var(--accent-gold); }
+    .footer-col p { color: rgba(255,255,255,0.7); line-height: 1.8; margin-bottom: 20px; font-size: 0.95rem; }
+    .footer-contact p { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 15px; }
+    .footer-contact i { color: var(--accent-gold); margin-top: 4px; }
+    .footer-links li { margin-bottom: 12px; }
+    .footer-links a { color: rgba(255,255,255,0.7); display: flex; align-items: center; gap: 10px; font-size: 0.95rem; }
+    .footer-links a::before { content: '\f105'; font-family: 'Font Awesome 6 Free'; font-weight: 900; color: var(--accent-gold); }
+    .footer-links a:hover { color: var(--accent-gold); padding-left: 5px; }
+    .social-links { display: flex; gap: 12px; margin-top: 25px; }
+    .social-links a { width: 40px; height: 40px; background-color: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); transition: var(--transition); }
+    .social-links a:hover { background-color: var(--accent-gold); transform: translateY(-3px); }
+    .copyright { text-align: center; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.6); font-size: 0.9rem; }
+
+    /* Animations */
+    .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .big-projects-grid { grid-template-columns: 1fr; }
+      .medium-projects-grid { grid-template-columns: repeat(2, 1fr); }
+      .small-projects-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .top-bar { display: none; }
+      .page-hero { margin-top: 90px; min-height: 350px; }
+      .page-hero h1 { font-size: 2.2rem; }
+      .hamburger { display: flex; }
+      .nav-links { position: fixed; top: 0; right: -100%; width: 80%; max-width: 350px; height: 100vh; background-color: var(--white); flex-direction: column; padding: 100px 40px 40px; gap: 25px; transition: var(--transition); box-shadow: -5px 0 15px rgba(0,0,0,0.1); }
+      .nav-links.active { right: 0; }
+      .nav-links a { font-size: 1.1rem; }
+      .section-title { font-size: 2rem; }
+      .medium-projects-grid, .small-projects-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+      .logo img { width: 50px; height: 50px; }
+      .logo-text h1 { font-size: 1.2rem; }
+      .logo-text span { font-size: 0.65rem; }
+      .big-project-card { height: 300px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-left">
+        <a href="tel:+2348028241486"><i class="fas fa-phone-alt"></i> +234 802 824 1486</a>
+        <a href="tel:+2348095584939"><i class="fas fa-phone-alt"></i> +234 809 558 4939</a>
+        <a href="mailto:thegreenstone14@gmail.com"><i class="fas fa-envelope"></i> thegreenstone14@gmail.com</a>
+      </div>
+      <div class="top-bar-right">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <nav class="navbar">
+      <a href="index.html" class="logo">
+        <img src="./img/greenstone-logo-2.png" alt="Greenstone Logo">
+        <div class="logo-text">
+          <h1>GREENSTONE</h1>
+          <span>Property Development Ltd</span>
+        </div>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html" class="btn btn-primary">Get a Quote</a></li>
+      </ul>
+
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- Page Hero -->
+<section class="page-hero">
+  <div class="container">
+    <h1>Our Projects</h1>
+    <p>A showcase of our commitment to excellence across residential, commercial, and institutional developments in Nigeria and Africa.</p>
+    <div class="breadcrumb">
+      <a href="index.html">Home</a> <span>/</span> Projects
+    </div>
+  </div>
+</section>
+
+<!-- Flagship & Big Projects -->
+<section class="section-padding">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-subtitle">Flagship Developments</span>
+      <h2 class="section-title">Large-Scale <span>Projects</span></h2>
+      <div class="section-divider"></div>
+      <p style="color: var(--gray); max-width: 700px; margin: 0 auto;">Our most ambitious and transformative real estate and construction projects.</p>
+    </div>
+
+    <div class="big-projects-grid">
+      <!-- Big 1 -->
+      <div class="project-card big-project-card fade-in">
+        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=800&auto=format&fit=crop" alt="Green Life Estate">
+        <span class="project-tag">Residential Estate</span>
+        <div class="project-overlay">
+          <h3>Green Life Estate</h3>
+          <p>Alakija, Lagos. A 16-acre planned residential estate featuring modern bungalows, semi-detached, and detached duplexes with pent floors along the Lagos-Badagry corridor.</p>
+        </div>
+      </div>
+      <!-- Big 2 -->
+      <div class="project-card big-project-card fade-in">
+        <img src="https://images.unsplash.com/photo-1519567241046-7f570eee3f9e?q=80&w=800&auto=format&fit=crop" alt="Islander Shopping Mall">
+        <span class="project-tag">Commercial</span>
+        <div class="project-overlay">
+          <h3>Islander Shopping Mall</h3>
+          <p>Ikoyi, Lagos. A proposed multi-purpose 6-floor mall concept featuring glass showrooms, supermarket space, underground parking, and 24-hour CCTV security.</p>
+        </div>
+      </div>
+      <!-- Big 3 -->
+      <div class="project-card big-project-card fade-in">
+        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=800&auto=format&fit=crop" alt="Abuja Hotel">
+        <span class="project-tag">Hospitality</span>
+        <div class="project-overlay">
+          <h3>Executive Hotel Remodel</h3>
+          <p>Gudu Cadastral District, Abuja. Ongoing supervision and remodeling of a 5-floor, 83-room 2-star executive hotel product.</p>
+        </div>
+      </div>
+      <!-- Big 4 -->
+      <div class="project-card big-project-card fade-in">
+        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop" alt="Lekki Office Complex">
+        <span class="project-tag">Facility Management</span>
+        <div class="project-overlay">
+          <h3>Ultramodern Office Complex</h3>
+          <p>Lekki-Epe Expressway, Lagos. Long-term facility management of a 4-floor ultramodern corporate office complex.</p>
+        </div>
+      </div>
+      <!-- Big 5 -->
+      <div class="project-card big-project-card fade-in">
+        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=800&auto=format&fit=crop" alt="TETFUND Project">
+        <span class="project-tag">Institutional</span>
+        <div class="project-overlay">
+          <h3>TETFUND Lecture Facilities</h3>
+          <p>Lagos State Polytechnic. Construction of multipurpose and lecture facilities funded by TETFUND.</p>
+        </div>
+      </div>
+      <!-- Big 6 -->
+      <div class="project-card big-project-card fade-in">
+        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=800&auto=format&fit=crop" alt="Mafoluku Apartments">
+        <span class="project-tag">Residential</span>
+        <div class="project-overlay">
+          <h3>Mafoluku/Oshodi Apartments</h3>
+          <p>Near MMIA, Lagos. Completed in 2023. Features 2x 3-bedroom and 2x 2-bedroom luxury apartments with penthouses.</p>
+        </div>
+      </div>
+      <!-- Big 7 -->
+      <div class="project-card big-project-card fade-in">
+        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format&fit=crop" alt="Sunshine Tower">
+        <span class="project-tag">Commercial</span>
+        <div class="project-overlay">
+          <h3>Sunshine Tower</h3>
+          <p>Victoria Island, Lagos. Premium commercial office space development and leasing management.</p>
+        </div>
+      </div>
+      <!-- Big 8 -->
+      <div class="project-card big-project-card fade-in">
+        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=800&auto=format&fit=crop" alt="Fara Park Estate">
+        <span class="project-tag">Residential</span>
+        <div class="project-overlay">
+          <h3>Fara Park Estate</h3>
+          <p>Lagos. A secure, well-planned residential community featuring modern architectural designs.</p>
+        </div>
+      </div>
+      <!-- Big 9 -->
+      <div class="project-card big-project-card fade-in">
+        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=800&auto=format&fit=crop" alt="Beach Wood Estate">
+        <span class="project-tag">Residential</span>
+        <div class="project-overlay">
+          <h3>Beach Wood Estate</h3>
+          <p>Lagos. Exclusive waterfront-adjacent residential development with premium amenities.</p>
+        </div>
+      </div>
+      <!-- Big 10 -->
+      <div class="project-card big-project-card fade-in">
+        <img src="https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?q=80&w=800&auto=format&fit=crop" alt="Shoprite Mall">
+        <span class="project-tag">Retail</span>
+        <div class="project-overlay">
+          <h3>Shoprite Mall (Lekki)</h3>
+          <p>Lekki, Lagos. Large-scale retail space development and facility management integration.</p>
+        </div>
+      </div>
+      <!-- Big 11 -->
+      <div class="project-card big-project-card fade-in">
+        <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=800&auto=format&fit=crop" alt="Ikorodu School">
+        <span class="project-tag">Institutional</span>
+        <div class="project-overlay">
+          <h3>Ikorodu Educational Facility</h3>
+          <p>Ikorodu, Lagos. Purpose-built educational infrastructure designed for optimal learning environments.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Medium Projects -->
+<section class="section-padding" style="background-color: var(--light-gray);">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-subtitle">Mid-Scale Developments</span>
+      <h2 class="section-title">Medium-Scale <span>Projects</span></h2>
+      <div class="section-divider"></div>
+      <p style="color: var(--gray); max-width: 700px; margin: 0 auto;">Strategic commercial and residential builds delivering high value and functionality.</p>
+    </div>
+
+    <div class="medium-projects-grid">
+      <!-- Med 1 -->
+      <div class="project-card medium-project-card fade-in">
+        <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?q=80&w=600&auto=format&fit=crop" alt="Greenstone HQ">
+        <span class="project-tag">Corporate</span>
+        <div class="project-overlay">
+          <h3>Greenstone Corporate HQ</h3>
+          <p>Oshodi, Lagos. Our own state-of-the-art headquarters and design studio.</p>
+        </div>
+      </div>
+      <!-- Med 2 -->
+      <div class="project-card medium-project-card fade-in">
+        <img src="https://images.unsplash.com/photo-1577495508048-b635879837f1?q=80&w=600&auto=format&fit=crop" alt="Islander Basement">
+        <span class="project-tag">Infrastructure</span>
+        <div class="project-overlay">
+          <h3>Islander Mall Basement</h3>
+          <p>Ikoyi. Multi-level underground parking structure with automated access.</p>
+        </div>
+      </div>
+      <!-- Med 3 -->
+      <div class="project-card medium-project-card fade-in">
+        <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?q=80&w=600&auto=format&fit=crop" alt="Oshodi Plaza">
+        <span class="project-tag">Commercial</span>
+        <div class="project-overlay">
+          <h3>NAFDAC Opposite Plaza</h3>
+          <p>Oshodi. 4-floor commercial retail and office space.</p>
+        </div>
+      </div>
+      <!-- Med 4 -->
+      <div class="project-card medium-project-card fade-in">
+        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=600&auto=format&fit=crop" alt="Gudu Suites">
+        <span class="project-tag">Hospitality</span>
+        <div class="project-overlay">
+          <h3>Gudu Executive Suites</h3>
+          <p>Abuja. Boutique executive short-let apartments.</p>
+        </div>
+      </div>
+      <!-- Med 5 -->
+      <div class="project-card medium-project-card fade-in">
+        <img src="https://images.unsplash.com/photo-1571055107559-3e67626fa8be?q=80&w=600&auto=format&fit=crop" alt="Alakija Clubhouse">
+        <span class="project-tag">Amenities</span>
+        <div class="project-overlay">
+          <h3>Green Life Clubhouse</h3>
+          <p>Alakija. Community center, gym, and event space for estate residents.</p>
+        </div>
+      </div>
+      <!-- Med 6 -->
+      <div class="project-card medium-project-card fade-in">
+        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=600&auto=format&fit=crop" alt="VI Business Park">
+        <span class="project-tag">Commercial</span>
+        <div class="project-overlay">
+          <h3>VI Business Park</h3>
+          <p>Victoria Island. Co-working and SME office complex.</p>
+        </div>
+      </div>
+      <!-- Med 7 -->
+      <div class="project-card medium-project-card fade-in">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=600&auto=format&fit=crop" alt="Lekki Duplexes">
+        <span class="project-tag">Residential</span>
+        <div class="project-overlay">
+          <h3>Lekki Phase 1 Duplexes</h3>
+          <p>Lagos. 4-unit luxury detached duplex development.</p>
+        </div>
+      </div>
+      <!-- Med 8 -->
+      <div class="project-card medium-project-card fade-in">
+        <img src="https://images.unsplash.com/photo-1515263487990-61b07816b324?q=80&w=600&auto=format&fit=crop" alt="Medical Center">
+        <span class="project-tag">Medical</span>
+        <div class="project-overlay">
+          <h3>Primary Medical Center</h3>
+          <p>Lagos. Specialized outpatient clinic construction.</p>
+        </div>
+      </div>
+      <!-- Med 9 -->
+      <div class="project-card medium-project-card fade-in">
+        <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=600&auto=format&fit=crop" alt="Warehouse">
+        <span class="project-tag">Industrial</span>
+        <div class="project-overlay">
+          <h3>Logistics Warehouse</h3>
+          <p>Ikeja. 2,000 sqm storage and distribution facility.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Small Properties -->
+<section class="section-padding">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-subtitle">Residential & Commercial Units</span>
+      <h2 class="section-title">Small-Scale <span>Properties</span></h2>
+      <div class="section-divider"></div>
+      <p style="color: var(--gray); max-width: 700px; margin: 0 auto;">A selection of our completed residential units, mini-flats, and commercial spaces available for lease and sale.</p>
+    </div>
+
+    <div class="small-projects-grid">
+      <!-- Small 1 -->
+      <div class="project-card small-project-card fade-in">
+        <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=400&auto=format&fit=crop" alt="Bungalow">
+        <span class="project-tag">Residential</span>
+        <div class="project-overlay"><h3>3-Bed Bungalow</h3><p>Alakija Estate</p></div>
+      </div>
+      <!-- Small 2 -->
+      <div class="project-card small-project-card fade-in">
+        <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=400&auto=format&fit=crop" alt="Semi-Detached">
+        <span class="project-tag">Residential</span>
+        <div class="project-overlay"><h3>Semi-Detached Duplex</h3><p>Green Life Estate</p></div>
+      </div>
+      <!-- Small 3 -->
+      <div class="project-card small-project-card fade-in">
+        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=400&auto=format&fit=crop" alt="Penthouse">
+        <span class="project-tag">Luxury</span>
+        <div class="project-overlay"><h3>Luxury Penthouse</h3><p>Mafoluku, Oshodi</p></div>
+      </div>
+      <!-- Small 4 -->
+      <div class="project-card small-project-card fade-in">
+        <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=400&auto=format&fit=crop" alt="Mini Flat">
+        <span class="project-tag">Residential</span>
+        <div class="project-overlay"><h3>2-Bed Mini Flat</h3><p>Ikeja GRA</p></div>
+      </div>
+      <!-- Small 5 -->
+      <div class="project-card small-project-card fade-in">
+        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=400&auto=format&fit=crop" alt="Office Space">
+        <span class="project-tag">Commercial</span>
+        <div class="project-overlay"><h3>Open Plan Office</h3><p>Victoria Island</p></div>
+      </div>
+      <!-- Small 6 -->
+      <div class="project-card small-project-card fade-in">
+        <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=400&auto=format&fit=crop" alt="Studio Apartment">
+        <span class="project-tag">Residential</span>
+        <div class="project-overlay"><h3>Studio Apartment</h3><p>Lekki Phase 1</p></div>
+      </div>
+      <!-- Small 7 -->
+      <div class="project-card small-project-card fade-in">
+        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=400&auto=format&fit=crop" alt="Retail Kiosk">
+        <span class="project-tag">Retail</span>
+        <div class="project-overlay"><h3>Retail Kiosk</h3><p>Islander Mall</p></div>
+      </div>
+      <!-- Small 8 -->
+      <div class="project-card small-project-card fade-in">
+        <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?q=80&w=400&auto=format&fit=crop" alt="Terrace">
+        <span class="project-tag">Residential</span>
+        <div class="project-overlay"><h3>4-Bed Terrace</h3><p>Magodo, Lagos</p></div>
+      </div>
+      <!-- Small 9 -->
+      <div class="project-card small-project-card fade-in">
+        <img src="https://images.unsplash.com/photo-1600573472550-8090b5e0745e?q=80&w=400&auto=format&fit=crop" alt="Showroom">
+        <span class="project-tag">Commercial</span>
+        <div class="project-overlay"><h3>Ground Floor Showroom</h3><p>Allen Avenue</p></div>
+      </div>
+      <!-- Small 10 -->
+      <div class="project-card small-project-card fade-in">
+        <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?q=80&w=400&auto=format&fit=crop" alt="Bungalow">
+        <span class="project-tag">Residential</span>
+        <div class="project-overlay"><h3>4-Bed Bungalow</h3><p>Gwarinpa, Abuja</p></div>
+      </div>
+      <!-- Small 11 -->
+      <div class="project-card small-project-card fade-in">
+        <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=400&auto=format&fit=crop" alt="Self Contain">
+        <span class="project-tag">Residential</span>
+        <div class="project-overlay"><h3>Self-Contain Unit</h3><p>Yaba, Lagos</p></div>
+      </div>
+      <!-- Small 12 -->
+      <div class="project-card small-project-card fade-in">
+        <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?q=80&w=400&auto=format&fit=crop" alt="Event Center">
+        <span class="project-tag">Commercial</span>
+        <div class="project-overlay"><h3>Small Event Hall</h3><p>Surulere, Lagos</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta">
+  <div class="container fade-in">
+    <h2>Want to See More or Start Your Project?</h2>
+    <p>For detailed project drawings, certificates, and full portfolio documents, or to discuss your next development, contact our team today.</p>
+    <a href="contact.html" class="btn btn-gold">Request Full Portfolio</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="logo" style="margin-bottom: 20px;">
+          <img src="./img/greenstone-logo-2.png" alt="Greenstone Logo" style="width: 50px; height: 50px;">
+          <div class="logo-text">
+            <h1 style="color: var(--white); font-size: 1.3rem;">GREENSTONE</h1>
+            <span style="color: rgba(255,255,255,0.7);">Property Development Ltd</span>
+          </div>
+        </div>
+        <p>Leading real estate development, construction and facility management company delivering world-class facilities across Nigeria and Africa.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Our Services</h3>
+        <ul class="footer-links">
+          <li><a href="services.html">Real Estate Development</a></li>
+          <li><a href="services.html">Construction</a></li>
+          <li><a href="services.html">Facility Management</a></li>
+          <li><a href="services.html">Property Leasing</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-contact">
+        <h3>Contact Info</h3>
+        <p><i class="fas fa-map-marker-alt"></i> <span>Lagos (Airport Rd): Plot 2 Adeyemo/Adeyemi St</span></p>
+        <p><i class="fas fa-map-marker-alt"></i> <span>Lagos (Oshodi): Plot 60 Boladale St</span></p>
+        <p><i class="fas fa-map-marker-alt"></i> <span>Abuja: Suite 321, Block D, Gwarinpa Estate</span></p>
+        <p><i class="fas fa-phone-alt"></i> <span>+234 802 824 1486</span></p>
+        <p><i class="fas fa-envelope"></i> <span>thegreenstone14@gmail.com</span></p>
+      </div>
+    </div>
+
+    <div class="copyright">
+      <p>&copy; 2026 Greenstone Property Development Ltd. All Rights Reserved. | SCUML Registered | COREN Licensed</p>
+    </div>
+  </div>
+</footer>
+
+<!-- JavaScript -->
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+    });
+  });
+
+  const fadeElements = document.querySelectorAll('.fade-in');
+  const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -30px 0px" };
+
+  const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('visible');
+      appearOnScroll.unobserve(entry.target);
+    });
+  }, appearOptions);
+
+  fadeElements.forEach(element => {
+    appearOnScroll.observe(element);
+  });
+
+  window.addEventListener('scroll', () => {
+    const header = document.querySelector('header');
+    header.style.boxShadow = window.scrollY > 100 ? '0 2px 20px rgba(0,0,0,0.15)' : '0 2px 15px rgba(0,0,0,0.1)';
+  });
+</script>
+</body>
+</html>

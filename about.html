@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About Greenstone Property Development Ltd - Learn about our vision, core principles, expert leadership team, and decade of excellence in Nigerian real estate and construction.">
+  <title>About Us | Greenstone Property Development Ltd</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --primary-green: #2d5a3d;
+      --dark-green: #1e3d29;
+      --light-green: #4a7c59;
+      --accent-gold: #c9a961;
+      --dark: #1a1a1a;
+      --gray: #666;
+      --light-gray: #f5f5f5;
+      --white: #ffffff;
+      --transition: all 0.3s ease;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Open Sans', sans-serif; color: var(--dark); line-height: 1.6; overflow-x: hidden; }
+    h1, h2, h3, h4, h5, h6 { font-family: 'Montserrat', sans-serif; font-weight: 700; }
+    a { text-decoration: none; color: inherit; transition: var(--transition); }
+    img { max-width: 100%; height: auto; }
+    .container { width: 90%; max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+
+    .btn {
+      display: inline-block; padding: 14px 35px; border-radius: 4px; font-weight: 600;
+      font-family: 'Montserrat', sans-serif; cursor: pointer; transition: var(--transition);
+      border: 2px solid transparent; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 0.5px;
+    }
+    .btn-primary { background-color: var(--primary-green); color: var(--white); border-color: var(--primary-green); }
+    .btn-primary:hover { background-color: var(--dark-green); border-color: var(--dark-green); transform: translateY(-2px); }
+    .btn-gold { background-color: var(--accent-gold); color: var(--white); border-color: var(--accent-gold); }
+    .btn-gold:hover { background-color: #b8984d; border-color: #b8984d; transform: translateY(-2px); }
+
+    /* Header & Navigation */
+    header { background-color: var(--white); position: fixed; top: 0; width: 100%; z-index: 1000; box-shadow: 0 2px 15px rgba(0,0,0,0.1); }
+    .top-bar { background-color: var(--dark-green); color: var(--white); padding: 10px 0; font-size: 0.9rem; }
+    .top-bar .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
+    .top-bar-left { display: flex; gap: 25px; align-items: center; }
+    .top-bar-left a { display: flex; align-items: center; gap: 8px; }
+    .top-bar-left a:hover { color: var(--accent-gold); }
+    .top-bar-right { display: flex; gap: 15px; }
+    .top-bar-right a { width: 35px; height: 35px; background-color: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: var(--transition); }
+    .top-bar-right a:hover { background-color: var(--accent-gold); transform: translateY(-2px); }
+    .navbar { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; }
+    .logo { display: flex; align-items: center; gap: 12px; }
+    .logo img { width: 60px; height: 60px; object-fit: contain; }
+    .logo-text h1 { font-size: 1.5rem; color: var(--primary-green); font-weight: 800; line-height: 1.2; }
+    .logo-text span { font-size: 0.75rem; color: var(--gray); font-weight: 500; display: block; letter-spacing: 1px; }
+    .nav-links { display: flex; gap: 35px; align-items: center; }
+    .nav-links a { font-weight: 600; font-size: 0.95rem; color: var(--dark); position: relative; padding: 5px 0; }
+    .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background-color: var(--primary-green); transition: var(--transition); }
+    .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+    .nav-links a.active { color: var(--primary-green); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { width: 25px; height: 3px; background-color: var(--primary-green); transition: var(--transition); }
+
+    /* Page Hero */
+    .page-hero {
+      margin-top: 120px; position: relative; height: 50vh; min-height: 400px;
+      background: linear-gradient(rgba(30, 61, 41, 0.85), rgba(30, 61, 41, 0.85)),
+      url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1920&auto=format&fit=crop') center/cover;
+      display: flex; align-items: center; justify-content: center; text-align: center; color: var(--white);
+    }
+    .page-hero h1 { font-size: 3rem; margin-bottom: 15px; }
+    .page-hero p { font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
+    .breadcrumb { margin-top: 20px; font-size: 0.95rem; }
+    .breadcrumb a { color: var(--accent-gold); }
+    .breadcrumb span { margin: 0 10px; opacity: 0.7; }
+
+    /* Sections General */
+    .section-padding { padding: 100px 0; }
+    .section-header { text-align: center; margin-bottom: 60px; }
+    .section-subtitle { color: var(--primary-green); font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; margin-bottom: 10px; display: block; }
+    .section-title { font-size: 2.5rem; color: var(--dark); margin-bottom: 20px; line-height: 1.3; }
+    .section-title span { color: var(--primary-green); }
+
+    /* Our Story */
+    .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .story-text p { color: var(--gray); margin-bottom: 20px; font-size: 1.05rem; line-height: 1.8; }
+    .story-image img { border-radius: 8px; box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
+    .vision-box { background-color: var(--light-gray); padding: 30px; border-left: 4px solid var(--accent-gold); border-radius: 0 8px 8px 0; margin-top: 30px; }
+    .vision-box h3 { color: var(--dark); margin-bottom: 10px; font-size: 1.3rem; }
+    .vision-box p { margin: 0; font-style: italic; color: var(--dark); }
+
+    /* Principles */
+    .principles { background-color: var(--light-gray); }
+    .principles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+    .principle-card { background: var(--white); padding: 40px 30px; border-radius: 8px; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.05); transition: var(--transition); }
+    .principle-card:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
+    .principle-card i { font-size: 2.5rem; color: var(--accent-gold); margin-bottom: 20px; }
+    .principle-card h3 { font-size: 1.3rem; margin-bottom: 15px; }
+    .principle-card p { color: var(--gray); font-size: 0.95rem; }
+
+    /* How We Work */
+    .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; position: relative; }
+    .process-step { text-align: center; position: relative; padding: 20px; }
+    .step-number { width: 50px; height: 50px; background-color: var(--primary-green); color: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem; margin: 0 auto 20px; border: 3px solid var(--white); box-shadow: 0 0 0 3px var(--primary-green); }
+    .process-step h4 { font-size: 1.1rem; margin-bottom: 10px; }
+    .process-step p { color: var(--gray); font-size: 0.9rem; }
+
+    /* Leadership Team */
+    .team { background-color: var(--light-gray); }
+    .team-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
+    .team-card { background: var(--white); border-radius: 8px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.05); display: flex; flex-direction: column; }
+    .team-header { background-color: var(--dark-green); color: var(--white); padding: 25px; position: relative; }
+    .team-header h3 { font-size: 1.3rem; margin-bottom: 5px; color: var(--white); }
+    .team-header span { color: var(--accent-gold); font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+    .team-body { padding: 25px; flex-grow: 1; }
+    .team-body p { color: var(--gray); font-size: 0.95rem; line-height: 1.7; margin-bottom: 15px; }
+    .team-credentials { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+    .credential-tag { background-color: var(--light-gray); color: var(--primary-green); padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; }
+
+    /* Compliance */
+    .compliance { background-color: var(--dark-green); color: var(--white); text-align: center; }
+    .compliance .section-title { color: var(--white); }
+    .compliance .section-subtitle { color: var(--accent-gold); }
+    .compliance-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; margin-top: 40px; }
+    .compliance-item { padding: 20px; border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; }
+    .compliance-item i { font-size: 2rem; color: var(--accent-gold); margin-bottom: 15px; }
+    .compliance-item h4 { font-size: 1.1rem; margin-bottom: 8px; }
+    .compliance-item p { font-size: 0.9rem; opacity: 0.8; }
+
+    /* CTA Section */
+    .cta { padding: 80px 0; background-color: var(--primary-green); text-align: center; }
+    .cta h2 { font-size: 2.5rem; color: var(--white); margin-bottom: 20px; }
+    .cta p { font-size: 1.2rem; color: rgba(255,255,255,0.9); margin-bottom: 35px; max-width: 700px; margin-left: auto; margin-right: auto; }
+
+    /* Footer */
+    footer { background-color: var(--dark); color: var(--white); padding: 80px 0 30px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 50px; margin-bottom: 50px; }
+    .footer-col h3 { font-size: 1.3rem; margin-bottom: 25px; color: var(--white); position: relative; padding-bottom: 12px; }
+    .footer-col h3::after { content: ''; position: absolute; bottom: 0; left: 0; width: 50px; height: 3px; background-color: var(--accent-gold); }
+    .footer-col p { color: rgba(255,255,255,0.7); line-height: 1.8; margin-bottom: 20px; font-size: 0.95rem; }
+    .footer-contact p { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 15px; }
+    .footer-contact i { color: var(--accent-gold); margin-top: 4px; }
+    .footer-links li { margin-bottom: 12px; }
+    .footer-links a { color: rgba(255,255,255,0.7); display: flex; align-items: center; gap: 10px; font-size: 0.95rem; }
+    .footer-links a::before { content: '\f105'; font-family: 'Font Awesome 6 Free'; font-weight: 900; color: var(--accent-gold); }
+    .footer-links a:hover { color: var(--accent-gold); padding-left: 5px; }
+    .social-links { display: flex; gap: 12px; margin-top: 25px; }
+    .social-links a { width: 40px; height: 40px; background-color: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--white); transition: var(--transition); }
+    .social-links a:hover { background-color: var(--accent-gold); transform: translateY(-3px); }
+    .copyright { text-align: center; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.6); font-size: 0.9rem; }
+
+    /* Animations */
+    .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .story-grid, .principles-grid, .team-grid { grid-template-columns: 1fr; }
+      .process-grid, .compliance-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .top-bar { display: none; }
+      .page-hero { margin-top: 90px; min-height: 350px; }
+      .page-hero h1 { font-size: 2.2rem; }
+      .hamburger { display: flex; }
+      .nav-links { position: fixed; top: 0; right: -100%; width: 80%; max-width: 350px; height: 100vh; background-color: var(--white); flex-direction: column; padding: 100px 40px 40px; gap: 25px; transition: var(--transition); box-shadow: -5px 0 15px rgba(0,0,0,0.1); }
+      .nav-links.active { right: 0; }
+      .nav-links a { font-size: 1.1rem; }
+      .section-title { font-size: 2rem; }
+      .process-grid, .compliance-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+      .logo img { width: 50px; height: 50px; }
+      .logo-text h1 { font-size: 1.2rem; }
+      .logo-text span { font-size: 0.65rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-left">
+        <a href="tel:+2348028241486"><i class="fas fa-phone-alt"></i> +234 802 824 1486</a>
+        <a href="tel:+2348095584939"><i class="fas fa-phone-alt"></i> +234 809 558 4939</a>
+        <a href="mailto:thegreenstone14@gmail.com"><i class="fas fa-envelope"></i> thegreenstone14@gmail.com</a>
+      </div>
+      <div class="top-bar-right">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <nav class="navbar">
+      <a href="index.html" class="logo">
+        <img src="./img/greenstone-logo-2.png" alt="Greenstone Logo">
+        <div class="logo-text">
+          <h1>GREENSTONE</h1>
+          <span>Property Development Ltd</span>
+        </div>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html" class="btn btn-primary">Get a Quote</a></li>
+      </ul>
+
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- Page Hero -->
+<section class="page-hero">
+  <div class="container">
+    <h1>About Us</h1>
+    <p>Building trust, quality, and excellence in real estate development across Nigeria and Africa for over a decade.</p>
+    <div class="breadcrumb">
+      <a href="index.html">Home</a> <span>/</span> About Us
+    </div>
+  </div>
+</section>
+
+<!-- Our Story -->
+<section class="section-padding">
+  <div class="container">
+    <div class="story-grid">
+      <div class="story-text fade-in">
+        <span class="section-subtitle">Our Story</span>
+        <h2 class="section-title">A Decade of <span>Excellence</span> in Property Development</h2>
+        <p>Greenstone Property Development Ltd is a Lagos-based real estate development, construction, and facility management company. For over a decade, we have consistently delivered premium office and residential facilities tailored for corporate, professional, educational, and medical clients at highly competitive prices.</p>
+        <p>Our business model is uniquely built on long-term relationships, evidenced by our industry-leading repeat tenants and lease renewals. With fully integrated in-house design, build, lease, and management capabilities, we ensure seamless execution from the initial blueprint to the final handover and beyond.</p>
+
+        <div class="vision-box">
+          <h3><i class="fas fa-eye" style="color: var(--accent-gold); margin-right: 10px;"></i> Our Vision</h3>
+          <p>"To be the leading provider of high-end facilities in estate development in Nigeria and Africa."</p>
+        </div>
+      </div>
+      <div class="story-image fade-in">
+        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=800&auto=format&fit=crop" alt="Greenstone Construction Site">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Core Principles -->
+<section class="principles section-padding">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-subtitle">What Drives Us</span>
+      <h2 class="section-title">Our Core <span>Principles</span></h2>
+    </div>
+    <div class="principles-grid">
+      <div class="principle-card fade-in">
+        <i class="fas fa-handshake"></i>
+        <h3>Client Satisfaction</h3>
+        <p>An unwavering commitment to understanding and exceeding our clients' expectations, resulting in an industry-leading 90% tenant retention rate at lease renewal.</p>
+      </div>
+      <div class="principle-card fade-in">
+        <i class="fas fa-award"></i>
+        <h3>Quality Workmanship</h3>
+        <p>We deliver nothing less than professional, top-tier workmanship and services, ensuring every Class A and B+ facility meets the highest global standards.</p>
+      </div>
+      <div class="principle-card fade-in">
+        <i class="fas fa-headset"></i>
+        <h3>24/7 Facility Management</h3>
+        <p>Our dedicated property managers are on call 24/7, providing proactive maintenance, regular inspections, and rapid emergency response for total peace of mind.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How We Work -->
+<section class="section-padding">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-subtitle">Our Process</span>
+      <h2 class="section-title">How Greenstone <span>Works</span></h2>
+      <p style="color: var(--gray); max-width: 700px; margin: 0 auto;">We coordinate every detail so our clients can focus entirely on their core business.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-step fade-in">
+        <div class="step-number">1</div>
+        <h4>Needs Assessment</h4>
+        <p>We begin by thoroughly assessing your facility requirements, budget, and long-term goals.</p>
+      </div>
+      <div class="process-step fade-in">
+        <div class="step-number">2</div>
+        <h4>Tailored Proposal</h4>
+        <p>Our team develops a comprehensive, customized proposal covering design, construction, and leasing.</p>
+      </div>
+      <div class="process-step fade-in">
+        <div class="step-number">3</div>
+        <h4>Execution & Build</h4>
+        <p>Expert project management ensures on-time, on-budget delivery with strict quality control.</p>
+      </div>
+      <div class="process-step fade-in">
+        <div class="step-number">4</div>
+        <h4>Hands-on Management</h4>
+        <p>Post-handover, we provide continuous 24/7 support, maintenance, and lease administration.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Leadership Team -->
+<section class="team section-padding">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-subtitle">Our Leadership</span>
+      <h2 class="section-title">Meet the <span>Principals</span></h2>
+      <p style="color: var(--gray); max-width: 700px; margin: 0 auto;">A powerful partnership of four industry experts focused on developing and managing premier real estate investments.</p>
+    </div>
+    <div class="team-grid">
+      <!-- Principal 1 -->
+      <div class="team-card fade-in">
+        <div class="team-header">
+          <h3>Boladale Abdul-Wahzee</h3>
+          <span>Founder & CEO</span>
+        </div>
+        <div class="team-body">
+          <p>With an architectural draughtsman background (20+ years) and 18+ years in construction and real estate development, Boladale leads our strategic vision. His extensive facility management experience includes the Lekki office complex (2007–2017).</p>
+          <p><strong>Key Projects:</strong> TETFUND works at Lagos State Polytechnic, Islander Shopping Mall (Ikoyi) design, Green Life Estate (Alakija), Mafoluku/Oshodi residential apartments, and ongoing supervision of an 83-room hotel remodel in Gudu, Abuja.</p>
+          <div class="team-credentials">
+            <span class="credential-tag">20+ Years Experience</span>
+            <span class="credential-tag">Architectural Design</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Principal 2 -->
+      <div class="team-card fade-in">
+        <div class="team-header">
+          <h3>Engr. Atukale Hammed Adigun</h3>
+          <span>Technical Director / Managing Partner</span>
+        </div>
+        <div class="team-body">
+          <p>Our technical lead since 2006, Engr. Adigun brings deep expertise in civil and building construction (HND YabaTech). He ensures all structural and engineering aspects of our projects meet the highest safety and quality benchmarks.</p>
+          <p><strong>Key Roles:</strong> General Secretary, NSE Lagos Branch. He provides rigorous technical oversight across all commercial, residential, and institutional builds.</p>
+          <div class="team-credentials">
+            <span class="credential-tag">MNSE</span>
+            <span class="credential-tag">MNICE</span>
+            <span class="credential-tag">COREN</span>
+            <span class="credential-tag">NIOB</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Principal 3 -->
+      <div class="team-card fade-in">
+        <div class="team-header">
+          <h3>Azeez Ayodabo Ayodele</h3>
+          <span>Director of Projects</span>
+        </div>
+        <div class="team-body">
+          <p>A highly skilled quantity surveyor and project manager (HND/BSc), Azeez ensures our projects are delivered with precise cost control, resource optimization, and strict adherence to timelines.</p>
+          <p><strong>Key Experience:</strong> Extensive portfolio spanning residential estates, banking facilities, shopping malls, and large-scale industrial factories across Nigeria.</p>
+          <div class="team-credentials">
+            <span class="credential-tag">MNIQS</span>
+            <span class="credential-tag">Project Management</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Principal 4 -->
+      <div class="team-card fade-in">
+        <div class="team-header">
+          <h3>Surveyor Babatunde Fatai Oladele</h3>
+          <span>Leasing & Management / Director of Operations</span>
+        </div>
+        <div class="team-body">
+          <p>A registered surveyor (BTech, FUT Minna) who has been driving our operational excellence since 2016. He specializes in leasing strategies, lease renewals, and seamless tenant fit-outs.</p>
+          <p><strong>Key Projects:</strong> Sunshine Tower (VI), Fara Park Estate, Beach Wood Estate, and Shoprite Mall (Lekki).</p>
+          <div class="team-credentials">
+            <span class="credential-tag">Registered Surveyor</span>
+            <span class="credential-tag">Estate Management</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Compliance & Standing -->
+<section class="compliance section-padding">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-subtitle">Trust & Integrity</span>
+      <h2 class="section-title">Compliance & Professional <span style="color: var(--accent-gold);">Standing</span></h2>
+      <p style="color: rgba(255,255,255,0.8); max-width: 700px; margin: 0 auto;">We operate with the highest levels of corporate governance and regulatory compliance.</p>
+    </div>
+    <div class="compliance-grid">
+      <div class="compliance-item fade-in">
+        <i class="fas fa-shield-alt"></i>
+        <h4>SCUML Registered</h4>
+        <p>Fully compliant with the Special Control Unit Against Money Laundering regulations.</p>
+      </div>
+      <div class="compliance-item fade-in">
+        <i class="fas fa-certificate"></i>
+        <h4>COREN Licensed</h4>
+        <p>Technical leadership holds current, active COREN practising licences.</p>
+      </div>
+      <div class="compliance-item fade-in">
+        <i class="fas fa-users-cog"></i>
+        <h4>Professional Bodies</h4>
+        <p>Active memberships in NSE, NICE, NIOB, and MNIQS.</p>
+      </div>
+      <div class="compliance-item fade-in">
+        <i class="fas fa-file-contract"></i>
+        <h4>Corporate Governance</h4>
+        <p>Supported by dedicated legal counsel, HR, and external chartered accounting firms.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta">
+  <div class="container fade-in">
+    <h2>Partner with Greenstone Today</h2>
+    <p>Whether you are looking to develop a new estate, construct a commercial facility, or require professional facility management, our expert team is ready to deliver.</p>
+    <a href="contact.html" class="btn btn-gold">Request a Consultation</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="logo" style="margin-bottom: 20px;">
+          <img src="./img/greenstone-logo-2.png" alt="Greenstone Logo" style="width: 50px; height: 50px;">
+          <div class="logo-text">
+            <h1 style="color: var(--white); font-size: 1.3rem;">GREENSTONE</h1>
+            <span style="color: rgba(255,255,255,0.7);">Property Development Ltd</span>
+          </div>
+        </div>
+        <p>Leading real estate development, construction and facility management company delivering world-class facilities across Nigeria and Africa.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Our Services</h3>
+        <ul class="footer-links">
+          <li><a href="services.html">Real Estate Development</a></li>
+          <li><a href="services.html">Construction</a></li>
+          <li><a href="services.html">Facility Management</a></li>
+          <li><a href="services.html">Property Leasing</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-contact">
+        <h3>Contact Info</h3>
+        <p><i class="fas fa-map-marker-alt"></i> <span>Lagos (Airport Rd): Plot 2 Adeyemo/Adeyemi St, off MMIA Rd</span></p>
+        <p><i class="fas fa-map-marker-alt"></i> <span>Lagos (Oshodi): Plot 60 Boladale St, off Oshodi-Isolo Exp. Way</span></p>
+        <p><i class="fas fa-map-marker-alt"></i> <span>Abuja: Suite 321, Block D, 3rd Ave, Gwarinpa Estate, FCT</span></p>
+        <p><i class="fas fa-phone-alt"></i> <span>+234 802 824 1486</span></p>
+        <p><i class="fas fa-envelope"></i> <span>thegreenstone14@gmail.com</span></p>
+      </div>
+    </div>
+
+    <div class="copyright">
+      <p>&copy; 2026 Greenstone Property Development Ltd. All Rights Reserved. | SCUML Registered | COREN Licensed</p>
+    </div>
+  </div>
+</footer>
+
+<!-- JavaScript -->
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+    });
+  });
+
+  const fadeElements = document.querySelectorAll('.fade-in');
+  const appearOptions = { threshold: 0.15, rootMargin: "0px 0px -50px 0px" };
+
+  const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('visible');
+      appearOnScroll.unobserve(entry.target);
+    });
+  }, appearOptions);
+
+  fadeElements.forEach(element => {
+    appearOnScroll.observe(element);
+  });
+
+  window.addEventListener('scroll', () => {
+    const header = document.querySelector('header');
+    header.style.boxShadow = window.scrollY > 100 ? '0 2px 20px rgba(0,0,0,0.15)' : '0 2px 15px rgba(0,0,0,0.1)';
+  });
+</script>
+</body>
+</html>
